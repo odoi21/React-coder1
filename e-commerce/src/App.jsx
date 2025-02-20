@@ -71,4 +71,4 @@ export default App
 
 //  className={style["hola"]} forma de nombrar clase principalmente si contiene espacios o guines o caracteres especiales
 
-//className={style.customButton} otra forma style pertenece al nombre de la importacion
+//  className={style.customButton} otra forma style pertenece al nombre de la importacion
