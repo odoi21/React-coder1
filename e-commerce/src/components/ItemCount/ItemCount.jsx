@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
+import style from './ItemCount.module.css'
 
 //esto es lo mismo que lo de la linea 48 
 
-export default function Contador() {
-    
-    const [count, setCount] = useState(1);
-    
-    function sumar() {
+function Contador() {
 
+const [count, setCount] = useState(1);
+
+function sumar() {
+    
         setCount(count + 1)
     }
     
@@ -24,8 +25,7 @@ export default function Contador() {
     }
 
     return (
-        <div className="div"
-            style={{marginTop:100, display:'flex'}}>
+        <div className={style["hola"]}>
 
             <button style={{width:50, height:40}} onClick={sumar}>
                 +
@@ -67,3 +67,6 @@ export default function Contador() {
         console.log('Se agrego al carrito')
     }
 }
+
+
+export default Contador

@@ -4,39 +4,35 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Container from "@mui/material/Container";
-import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../../assets/Logito.png";
 import { red } from "@mui/material/colors";
+import CartWidget from '../CartWidget/CartWidget/'
+import style from './NavBar.module.css'
 
-export default function Navbar() {
+export default function NavBar() {
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: "rgb(71, 71, 71);", zIndex: 1100 }}>
-      <Container maxWidth="xl">
-        <Toolbar>
-          {/* Logo */}
-          <Box
-            component="img"
-            src={Logo}
-            alt="Logo"
-            sx={{ height: 80, marginRight: 2, }}
-          />
-
-          {/* Apartados */}
-          <Box sx={{ flexGrow: 1, display: "flex" }}>
-            <Button sx={{ color: "white", mx: 1 }}>Inicio</Button>
-            <Button sx={{ color: "white", mx: 1 }}>Productos</Button>
-            <Button sx={{ color: "white", mx: 1 }}>Categorías</Button>
-          </Box>
-
-          {/* Icono del carrito */}
-          <IconButton sx={{ color: "white"}}>
-            <ShoppingCartIcon />
-          </IconButton>
-        </Toolbar>
-      </Container>
-    </AppBar>
+      <AppBar position="fixed" sx={{ backgroundColor: "rgb(71, 71, 71)", zIndex: 1100 }}>
+          <Container maxWidth="100" sx={{margin:'0', padding: '0 !important' }}>
+              <Toolbar sx={{margin:'0', padding: '0 !important', display: 'flex', }}>
+                  {/* Logo */}
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                      <Box component="img" src={Logo} alt="Logo" sx={{ height: 80 }} />
+                  </Box>
+                  {/* Apartados */}
+                  <Box sx={{ display: 'flex', flexGrow: 1, alignItems: 'center' }}>
+                      <Box sx={{ display: 'flex' }}>
+                          <Button className={style.customButton} sx={{ color: "white", minWidth: '80px' }}>Inicio</Button>
+                          <Button className={style.customButton} sx={{ color: "white", minWidth: '80px' }}>Productos</Button>
+                          <Button className={style.customButton} sx={{ color: "white", minWidth: '80px' }}>Categorias</Button>
+                      </Box>
+                  </Box>
+                  {/* Icono del carrito */}
+                  <Box  sx={{marginRight:10, display: 'flex', alignItems: 'center' }}>
+                      <CartWidget/>
+                  </Box>
+              </Toolbar>
+          </Container>
+      </AppBar>
   );
 }

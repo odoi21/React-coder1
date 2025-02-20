@@ -1,0 +1,9 @@
+/* CartWidget.module.css */
+.Cart {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.Cart:hover {
+    color: red;
+}
