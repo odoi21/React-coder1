@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import NavBar from './components/NavBar/NavBar'
+import  NavBar from './components/NavBar/Navbar'
 import ItemCount from './components/ItemCount/ItemCount'
-
+import ProductCard from './components/Item/Item'
 function App() {
 
 
@@ -55,6 +55,7 @@ function App() {
     </NavBar>
 
     <ItemCount></ItemCount>
+    <ProductCard></ProductCard>
     </>
 
   )
