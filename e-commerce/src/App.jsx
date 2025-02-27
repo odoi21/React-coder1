@@ -1,9 +1,21 @@
 import { useState, useEffect } from 'react'
+import {useFetch} from './hooks/useFetch'
 import './App.css'
 import  NavBar from './components/NavBar/Navbar'
 import ItemCount from './components/ItemCount/ItemCount'
 import ProductCard from './components/Item/Item'
+
+
+
+
 function App() {
+
+
+  const {data , loading, error} = useFetch('https://fakestoreapi.com/products?limit=10')
+
+  console.log({data})
+  console.log({loading})
+  console.log({error})
 
 
 
