@@ -11,7 +11,7 @@ export const useFetch = (url) => {
 
     useEffect(() => {
         // Llamada a Fake Store API usando .then y limitando a 10 productos
-        fetch(url)
+        fetch('https://fakestoreapi.com/products')
             .then(res => res.json())
             .then(json => {
                 setData(json)

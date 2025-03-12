@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import style from './Item.module.css'
 
 export default function ProductsCard(params) {
-
     const  Products  = [{
         id: 1, 
         title: 'Ryzen 5 8600g', 

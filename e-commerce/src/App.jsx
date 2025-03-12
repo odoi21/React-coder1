@@ -1,76 +1,46 @@
 import { useState, useEffect } from 'react'
 import {useFetch} from './hooks/useFetch'
 import './App.css'
-import  NavBar from './components/NavBar/Navbar'
+import NavBar from './components/NavBar/Navbar'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ItemCount from './components/ItemCount/ItemCount'
 import ProductCard from './components/Item/Item'
+import Item from './components/Item/Item'
+import ItemList from './components/ItemList/ItemList'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 
 
 
 function App() {
 
-
-  const {data , loading, error} = useFetch('https://fakestoreapi.com/products?limit=10')
-
-  console.log({data})
-  console.log({loading})
-  console.log({error})
-
-
-
-
-
-const Prods = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    // Llamada a Fake Store API usando .then y limitando a 10 productos
-    fetch('https://fakestoreapi.com/products?limit=10')
-      .then (res=> res.json())
-      .then (json=> {
-        setProducts(json)
-      })
-
-
-      .catch((error) => {
-        console.error('Error fetching products:', error);
-      });
-      
-  }, []);
   
-  
-  return (
-    <div>
-      <h1>Lista de Productos</h1>
-      <div>
-        {products.map((product) => (
-          <div key={product.id}>
-            <h2>{product.title}</h2>
-            <img src={product.image} alt={product.title} style={{ width: '100px' }} />
-            <p>{product.description}</p>
-            <p>Precio: ${product.price}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-
-
 
   return (
     <>
-    <NavBar>
-    
-    </NavBar>
-    <Prods></Prods>
-    <ItemCount></ItemCount>
-    <ProductCard></ProductCard>
+      <BrowserRouter>
+    <NavBar/>
+    <ItemListContainer></ItemListContainer>
+    <Routes>
+      <Route path='/' element={<ItemList/>}/>
+    </Routes>
+  </BrowserRouter>
     </>
-
   )
-};
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

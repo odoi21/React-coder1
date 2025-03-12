@@ -1,30 +1,57 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
+import { useState } from "react";
+import { AppBar, Toolbar, Typography, Button, Menu, MenuItem, IconButton, Box, Container } from "@mui/material";
 import Logo from "../../assets/Logito.png";
 import { red } from "@mui/material/colors";
 import CartWidget from '../CartWidget/CartWidget/'
 import style from './NavBar.module.css'
+import { Link } from 'react-router-dom'
 
-export default function NavBar() {
+const NavBar = () => {
+
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+
+    const handleMenuOpen = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleMenuClose = () => {
+        setAnchorEl(null);
+    };
+
+
     return (
+
         <AppBar position="fixed" sx={{ backgroundColor: "rgb(71, 71, 71)", zIndex: 1100 }}>
             <Container maxWidth="100" sx={{ margin: '0', padding: '0 !important' }}>
                 <Toolbar sx={{ margin: '0', padding: '0 !important', display: 'flex', }}>
                     {/* Logo */}
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Box component="img" src={Logo} alt="Logo" sx={{ height: 80 }} />
-                    </Box>
+                    <Link to="/">
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                            <Box component="img" src={Logo} alt="Logo" sx={{ height: 80 }} />
+                        </Box>
+                    </Link>
                     {/* Apartados */}
                     <Box sx={{ display: 'flex', flexGrow: 1, alignItems: 'center' }}>
                         <Box sx={{ display: 'flex' }}>
+                            <Link to="/">
                             <Button className={style.customButton} sx={{ color: "white", minWidth: '80px' }}>Inicio</Button>
+                            </Link>
+                            <Link to="/ItemListContainer">
                             <Button className={style.customButton} sx={{ color: "white", minWidth: '80px' }}>Productos</Button>
-                            <Button className={style.customButton} sx={{ color: "white", minWidth: '80px' }}>Categorias</Button>
+                            </Link>
+
+                            {/* Dropdown Button */}
+                            <Button className={style.customButton} sx={{ color: "white", minWidth: '80px' }}  onClick={handleMenuOpen}>
+                                Categorias 
+                            </Button>
+                            
+                            {/* Dropdown Menu */}
+                            <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
+                                <MenuItem onClick={handleMenuClose}>MicroProcesadores</MenuItem>
+                                <MenuItem onClick={handleMenuClose}>MotherBoards</MenuItem>
+                            </Menu>
                         </Box>
                     </Box>
                     {/* Icono del carrito */}
@@ -36,3 +63,5 @@ export default function NavBar() {
         </AppBar>
     );
 }
+
+export default NavBar
