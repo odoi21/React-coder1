@@ -6,6 +6,7 @@ import { red } from "@mui/material/colors";
 import CartWidget from '../CartWidget/CartWidget/'
 import style from './NavBar.module.css'
 import { Link } from 'react-router-dom'
+import ItemListContainer from "../ItemListContainer/ItemListContainer";
 
 const NavBar = () => {
 
@@ -27,7 +28,7 @@ const NavBar = () => {
             <Container maxWidth="100" sx={{ margin: '0', padding: '0 !important' }}>
                 <Toolbar sx={{ margin: '0', padding: '0 !important', display: 'flex', }}>
                     {/* Logo */}
-                    <Link to="/">
+                    <Link to={"/"}>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
                             <Box component="img" src={Logo} alt="Logo" sx={{ height: 80 }} />
                         </Box>
@@ -35,10 +36,10 @@ const NavBar = () => {
                     {/* Apartados */}
                     <Box sx={{ display: 'flex', flexGrow: 1, alignItems: 'center' }}>
                         <Box sx={{ display: 'flex' }}>
-                            <Link to="/">
+                            <Link to={"/"}>
                             <Button className={style.customButton} sx={{ color: "white", minWidth: '80px' }}>Inicio</Button>
                             </Link>
-                            <Link to="/ItemListContainer">
+                            <Link to={'/Items'}>
                             <Button className={style.customButton} sx={{ color: "white", minWidth: '80px' }}>Productos</Button>
                             </Link>
 
@@ -49,7 +50,7 @@ const NavBar = () => {
                             
                             {/* Dropdown Menu */}
                             <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
-                                <MenuItem onClick={handleMenuClose}>MicroProcesadores</MenuItem>
+                                <MenuItem onClick={handleMenuClose}>Microprocesadores</MenuItem>
                                 <MenuItem onClick={handleMenuClose}>MotherBoards</MenuItem>
                             </Menu>
                         </Box>
