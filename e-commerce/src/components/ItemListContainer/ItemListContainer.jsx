@@ -11,8 +11,8 @@ const ItemListContainer = (params) => {
             .then(response => response.json())
             .then(data => setProducts(data))
             .catch(error => console.error('Error fetching data:', error));
-    }, []);
-
+        }, []);
+        console.log(products)
     return (
         <div>
             <h1>Lista de Productos</h1>
@@ -25,10 +25,10 @@ const ItemListContainer = (params) => {
                         <p>Precio: ${product.price}</p>
                     </div>
                 ))}
+                
             </div>
         </div>
     );
-
 }
 
 export default ItemListContainer

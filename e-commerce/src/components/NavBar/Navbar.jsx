@@ -6,7 +6,6 @@ import { red } from "@mui/material/colors";
 import CartWidget from '../CartWidget/CartWidget/'
 import style from './NavBar.module.css'
 import { Link } from 'react-router-dom'
-import ItemListContainer from "../ItemListContainer/ItemListContainer";
 
 const NavBar = () => {
 
@@ -49,9 +48,13 @@ const NavBar = () => {
                             </Button>
                             
                             {/* Dropdown Menu */}
-                            <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
-                                <MenuItem onClick={handleMenuClose}>Microprocesadores</MenuItem>
-                                <MenuItem onClick={handleMenuClose}>MotherBoards</MenuItem>
+                            <Menu  anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
+                                <Link to={'/category/electronics'}>
+                                <MenuItem className={style.category} sx={{  minWidth: '80px' }}  onClick={handleMenuClose}>Microprocesadores</MenuItem>
+                                </Link>
+                                <Link to={'/category/jewelery'}>
+                                <MenuItem className={style.category} onClick={handleMenuClose}>MotherBoards</MenuItem>
+                                </Link>
                             </Menu>
                         </Box>
                     </Box>

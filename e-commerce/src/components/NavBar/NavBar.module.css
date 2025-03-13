@@ -1,3 +1,13 @@
 .customButton:hover {
     color: red;
 }
+
+.category {
+    color: black !important;
+    text-decoration: none !important;
+    list-style: none !important;
+}
+
+.category:hover {
+    color: red;
+}
