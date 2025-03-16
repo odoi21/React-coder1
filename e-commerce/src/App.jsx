@@ -5,9 +5,9 @@ import NavBar from './components/NavBar/Navbar'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ItemCount from './components/ItemCount/ItemCount'
 import ProductCard from './components/Item/Item'
-import Item from './components/Item/Item'
 import ItemList from './components/ItemList/ItemList'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 
 
 
@@ -25,6 +25,7 @@ function App() {
       <Route path='/' element={<ItemList/>}/>
       <Route path='Items' element={<ItemListContainer/>}></Route>
       <Route path='category/:categoryId' element={<ItemListContainer/>}></Route>
+      <Route path='item/:Id' element={<ItemDetailContainer/>}></Route>
     </Routes>
   </BrowserRouter>
     </>
