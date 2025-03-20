@@ -8,6 +8,7 @@ import ProductCard from './components/Item/Item'
 import ItemList from './components/ItemList/ItemList'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import Loader from './components/Loader/Loader'
 
 
 
@@ -28,6 +29,7 @@ function App() {
       <Route path='item/:Id' element={<ItemDetailContainer/>}></Route>
     </Routes>
   </BrowserRouter>
+    
     </>
   )
 
