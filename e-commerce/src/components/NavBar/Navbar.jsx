@@ -49,10 +49,10 @@ const NavBar = () => {
                             
                             {/* Dropdown Menu */}
                             <Menu  anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
-                                <Link to={'/category/electronics'}>
+                                <Link to={'/category/Microprocesadores'}>
                                 <MenuItem className={style.category} sx={{  minWidth: '80px' }}  onClick={handleMenuClose}>Microprocesadores</MenuItem>
                                 </Link>
-                                <Link to={'/category/jewelery'}>
+                                <Link to={'/category/Motherboards'}>
                                 <MenuItem className={style.category} onClick={handleMenuClose}>MotherBoards</MenuItem>
                                 </Link>
                             </Menu>

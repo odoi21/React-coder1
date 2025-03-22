@@ -10,7 +10,7 @@ const ProductsCard = (params) => {
                         key={prod.id}
                         style={{ cursor: "pointer" }}
                         onClick={() => navigate(`/item/${prod.id}`)}
-                    >
+                        >
                         {prod.title}
                     </div>
                 ))}

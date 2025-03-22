@@ -6,7 +6,7 @@ const ItemDetailContainer = () => {
     return (
         <>
         <div>
-            <ItemListContainer></ItemListContainer>
+            
         </div>
         </>
     );

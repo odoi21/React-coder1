@@ -16,9 +16,9 @@ const ItemList = (params) => {
             </div>
             <div className={style["card-footer"]}>
                 <span className={style["text-title"]}>$499.49</span>
-                <Link to={''}>
-                <button>
-                    Info
+                <Link to={'item/:id'}>
+                <button className={style["button"]}>
+                    Detalles
                 </button>
                 </Link>
                 <div className={style["card-button"]}>
@@ -40,9 +40,9 @@ const ItemList = (params) => {
             </div>
             <div className={style["card-footer"]}>
                 <span className={style["text-title"]}>$499.49</span>
-                <Link to={''}>
-                <button>
-                    Info
+                <Link to={'item/:Id'}>
+                <button className={style["button"]}>
+                    Detalles
                 </button>
                 </Link>
                 <div className={style["card-button"]}>
@@ -64,9 +64,9 @@ const ItemList = (params) => {
             </div>
             <div className={style["card-footer"]}>
                 <span className={style["text-title"]}>$499.49</span>
-                <Link to={''}>
-                <button>
-                    Info
+                <Link to={'item/:Id'}>
+                <button className={style["button"]}>
+                    Detalles
                 </button>
                 </Link>
                 <div className={style["card-button"]}>
@@ -88,9 +88,9 @@ const ItemList = (params) => {
             </div>
             <div className={style["card-footer"]}>
                 <span className={style["text-title"]}>$499.49</span>
-                <Link to={''}>
-                <button>
-                    Info
+                <Link to={'item/:Id'}>
+                <button className={style["button"]}>
+                    Detallaes
                 </button>
                 </Link>
                 <div className={style["card-button"]}>
