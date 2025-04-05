@@ -58,10 +58,12 @@ const NavBar = () => {
                             </Menu>
                         </Box>
                     </Box>
+                    <Link to={'/Cart'}>
                     {/* Icono del carrito */}
                     <Box sx={{ marginRight: 10, display: 'flex', alignItems: 'center' }}>
                         <CartWidget />
                     </Box>
+                    </Link>
                 </Toolbar>
             </Container>
         </AppBar>

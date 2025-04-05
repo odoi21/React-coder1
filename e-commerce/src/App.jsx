@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react'
-import {useFetch} from './hooks/useFetch'
+import { useFetch } from './hooks/useFetch'
 import './App.css'
 import NavBar from './components/NavBar/Navbar'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemCount from './components/ItemCount/ItemCount'
 import ProductCard from './components/Item/Item'
 import ItemList from './components/ItemList/ItemList'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import Cart from './components/Cart/Cart'
 
 
 
@@ -15,21 +16,23 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 
 function App() {
 
-  
+
 
   return (
     <>
-      <BrowserRouter>
-    <NavBar/>
       
-    <Routes>
-      <Route path='/' element={<ItemList/>}/>
-      <Route path='Items' element={<ItemListContainer/>}></Route>
-      <Route path='category/:categoryId' element={<ItemListContainer/>}></Route>
-      <Route path='item/:Id' element={<ItemDetailContainer/>}></Route>
-    </Routes>
-  </BrowserRouter>
-    
+        <BrowserRouter>
+          <NavBar/>
+          <Routes>
+            <Route exact path='/' element={<ItemList />} />
+            <Route path='/Items' element={<ItemListContainer />}></Route>
+            <Route path='/category/:categoryId' element={<ItemListContainer />}></Route>
+            <Route path='/item/:Id' element={<ItemDetailContainer />}></Route>
+            <Route path='/Cart' element={<Cart />}></Route>
+          </Routes>
+        </BrowserRouter>
+      
+
     </>
   )
 
