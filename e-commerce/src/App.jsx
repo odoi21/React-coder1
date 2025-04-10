@@ -4,7 +4,7 @@ import './App.css'
 import NavBar from './components/NavBar/Navbar'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemCount from './components/ItemCount/ItemCount'
-import ProductCard from './components/Item/Item'
+import ProductCard from './components/ItemList/ItemList'
 import ItemList from './components/ItemList/ItemList'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
@@ -24,9 +24,9 @@ function App() {
         <BrowserRouter>
           <NavBar/>
           <Routes>
-            <Route exact path='/' element={<ItemList />} />
+            <Route exact path='/' element={<ItemListContainer />} />
             <Route path='/Items' element={<ItemListContainer />}></Route>
-            <Route path='/category/:categoryId' element={<ItemListContainer />}></Route>
+            <Route path='/category/:category' element={<ItemListContainer />}></Route>
             <Route path='/item/:Id' element={<ItemDetailContainer />}></Route>
             <Route path='/Cart' element={<Cart />}></Route>
           </Routes>

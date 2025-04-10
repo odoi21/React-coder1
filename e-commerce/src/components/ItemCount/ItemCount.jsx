@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import style from './ItemCount.module.css'
 
-const Contador = () => {
+const ItemCount = () => {
 
     const [count, setCount] = useState(1);
 
@@ -47,4 +47,4 @@ const Contador = () => {
 
 
 
-export default Contador
+export default ItemCount
