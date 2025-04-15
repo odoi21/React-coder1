@@ -35,19 +35,22 @@ const ItemDetail = ({ product }) => {
                         <Typography variant="h5" component="div">
                             {product.Title} {/* Título del producto */}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant="body1" color="text.secondary">
                             {product.Description} {/* Descripción del producto */}
                         </Typography>
-                        <Typography variant="body1" sx={{ color: "black" }}>
+                        <Typography variant="h6" sx={{ color: "black" }}>
                             Precio: ${product.Price} {/* Precio del producto */}
                         </Typography>
-                    </CardContent>
-                    <ItemCount
+                        <Typography variant="h6" component="div">
+                            Stock: {product.Stock} {/* Título del producto */}
+                        </Typography>
+                    <ItemCount 
                         cantidad={cantidad}
                         handleSumar={handleSumar}
                         handleRestar={handleRestar}
                         handleAgregar={() => agregarAlCarrito(item, cantidad)} // Agregar al carrito
                     />
+                    </CardContent>
                 </Grid>
             </Grid>
         </Card>
