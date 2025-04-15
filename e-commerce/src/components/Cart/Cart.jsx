@@ -6,15 +6,15 @@ const Cart = () => {
     const [ buyer, setBuyer] = useState({name:'', email:'', phone:''})
     const [ orderId, setOrderId] = useState('')
     
-    const OnchangeName = (name) => {
+    const onChangeName = (name) => {
         setBuyer({...buyer, name})
     }
 
-    const OnchangeEmail = (email) => {
+    const onChangeEmail = (email) => {
         setBuyer({...buyer, email})
     }
 
-    const OnchangePhone = (phone) => {
+    const onChangePhone = (phone) => {
         setBuyer({...buyer, phone})
     }  
 
@@ -22,9 +22,9 @@ const Cart = () => {
         <div>
             <h1 sx={{ marginTop: 200, display: 'flex', alignItems: 'center' }}>Cart</h1>
             <form action="">
-            <input type="text"   placeholder="Nombre y apellido" required Onchange={(event) => OnchangeName(event.target.value)}/>
-            <input type="number" placeholder="Correo Electronico"  required Onchange={(event) => OnchangeEmail(event.target.value)}/>
-            <input type="number" placeholder="Numero de Telefono" required Onchange={(event) => OnchangePhone(event.target.value)}/>
+            <input type="text"   placeholder="Nombre y apellido" required Onchange={(event) => onChangeName(event.target.value)}/>
+            <input type="number" placeholder="Correo Electronico"  required Onchange={(event) => onChangeEmail(event.target.value)}/>
+            <input type="number" placeholder="Numero de Telefono" required Onchange={(event) => onChangePhone(event.target.value)}/>
             </form>
         </div>
     )   
