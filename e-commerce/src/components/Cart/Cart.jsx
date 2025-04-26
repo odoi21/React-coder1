@@ -1,6 +1,45 @@
-import { useState } from 'react'    
+import React from "react";
+import { useCart } from "../context/CartContext";
 
-//checkout
+const Cart = () => {
+    const { cart, removeFromCart, clearCart } = useCart();
+
+    if (cart.length === 0) {
+        return <p>El carrito está vacío</p>;
+    }
+
+    return (
+        <div>
+            <h1>Carrito</h1>
+            <ul style={{ listStyle: "none", padding: 0, marginTop: 20 }}>
+                {cart.map((product) => (
+                    <li key={product.id} style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}>
+                        <img
+                            src={product.image}
+                            alt={product.title}
+                            style={{ width: "100px", height: "100px", objectFit: "cover", marginRight: "20px" }}
+                        />
+                        <div>
+                            <h3>{product.title}</h3>
+                            <p>Cantidad: {product.quantity}</p>
+                            <p>Precio unitario: ${product.Price}</p>
+                            <p>Total: ${product.Price * product.quantity}</p>
+                            <button onClick={() => removeFromCart(product.id)}>Eliminar</button>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+            <button onClick={clearCart}>Vaciar carrito</button>
+        </div>
+    );
+};
+
+export default Cart;
+
+
+
+
+/*checkout
 const Cart = () => {
     
     const [ buyer, setBuyer] = useState({name:'', email:'', phone:''})
@@ -30,7 +69,6 @@ const Cart = () => {
     )   
 }
 
-export default Cart
 
 
-//<button type="submit" onClick={()}>Enviar</button>
+//<button type="submit" onClick={()}>Enviar</button>*/

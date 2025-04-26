@@ -5,22 +5,31 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import { useCart } from "../context/CartContext"; // Asegúrate de que el contexto esté configurado
 
 
 const ItemDetail = ({ product }) => {
-     // Usar el contexto del carrito
+    // Usar el contexto del carrito
     const [cantidad, setCantidad] = useState(1);
+    const { addToCart } = useCart();
 
     const handleRestar = () => {
         cantidad > 1 && setCantidad(cantidad - 1);
     };
 
     const handleSumar = () => {
-        cantidad < item.stock && setCantidad(cantidad + 1);
+        cantidad < product.stock && setCantidad(cantidad + 1);
     };
 
+    const OnAdd = () => {
+        if (cantidad > product.Stock) {
+            alert("No puedes agregar más productos de los disponibles en stock.");
+            return;
+        }
+        addToCart(product, cantidad); // Agregar el producto al carrito
+    };
     return (
-        <Card sx={{ maxWidth: "100%", maxHeight: "100vh", margin: 2 ,marginTop: 40}}>
+        <Card sx={{ maxWidth: "100%", maxHeight: "100vh", margin: 2, marginTop: 40 }}>
             <Grid container spacing={2}>
                 <Grid item xs={4}>
                     <CardMedia
@@ -44,12 +53,12 @@ const ItemDetail = ({ product }) => {
                         <Typography variant="h6" component="div">
                             Stock: {product.Stock} {/* Título del producto */}
                         </Typography>
-                    <ItemCount 
-                        cantidad={cantidad}
-                        handleSumar={handleSumar}
-                        handleRestar={handleRestar}
-                        handleAgregar={() => agregarAlCarrito(item, cantidad)} // Agregar al carrito
-                    />
+                        <ItemCount
+                            cantidad={cantidad}
+                            handleSumar={handleSumar}
+                            handleRestar={handleRestar}
+                            handleAgregar={OnAdd} // Agregar al carrito
+                        />
                     </CardContent>
                 </Grid>
             </Grid>
